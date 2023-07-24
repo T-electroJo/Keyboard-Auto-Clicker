@@ -23,8 +23,10 @@ def run():
         if not running:
             break
         if active:
-            keyboard.press_and_release(key)
-            time.sleep(1.0 / int(speed))
+            keyboard.press(key)
+            time.sleep(1.0 / int(speed) / 2)
+            keyboard.release(key)
+            time.sleep(1.0 / int(speed) / 2)
 
 def hotkey_press():
     global active, running
